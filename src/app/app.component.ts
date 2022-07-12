@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { FormGroup, Validators, FormControl } from '@angular/forms';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,29 +6,17 @@ import { FormGroup, Validators, FormControl } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   title = 'movies-app';
-  movies: any[] = [];
+  
+  @Input() moviesList : any[] = [];
+  @Output() movies = new EventEmitter<any[]>();
 
-  genres = [
-    { name: 'Action' },
-    { name: 'Drama' },
-    { name: 'Thriller' },
-    { name: 'Horror' },
-    { name: 'Comedy' }
-  ];
-
-  form = new FormGroup({
-    //We can add Validator in this block
-    movieName: new FormControl(''),
-    directorName: new FormControl(''),
-    productionBy: new FormControl(''),
-    releaseYr: new FormControl(''),
-    genre: new FormControl(''),
-  });
-
-  submit() {
-    console.log(JSON.stringify(this.form.value));
-    this.movies.push(this.form.value);
-    this.form.reset();
+  addMovie(newMovie: []){
+    console.log(newMovie);
+    this.moviesList.push(newMovie);
+    console.log(this.moviesList);
+    this.movies.emit(this.moviesList);
   }
+
 }

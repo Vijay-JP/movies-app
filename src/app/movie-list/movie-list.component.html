@@ -1,0 +1,22 @@
+<div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Movie Name</th>
+          <th>Director</th>
+          <th>Release Year</th>
+          <th>Production</th>
+          <th>Genre</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of movies">
+          <td>{{movie.movieName}}</td>
+          <td>{{movie.directorName}}</td>
+          <td>{{movie.productionBy}}</td>
+          <td>{{movie.releaseYr}}</td>
+          <td>{{movie.genre}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
