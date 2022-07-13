@@ -10,13 +10,13 @@ export class AppComponent {
   title = 'movies-app';
   
   @Input() moviesList : any[] = [];
-  @Output() movies = new EventEmitter<any[]>();
+  @Output() movies : any[] = [];
 
   addMovie(newMovie: []){
-    console.log(newMovie);
     this.moviesList.push(newMovie);
     console.log(this.moviesList);
-    this.movies.emit(this.moviesList);
+    //this.movies.emit(this.moviesList);
+    this.movies = this.moviesList;
   }
 
 }

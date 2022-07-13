@@ -1,4 +1,4 @@
 <div class="container">
   <app-movie-input (newMovieAddEvent)="addMovie($event)"></app-movie-input>
-  <app-movie-list (moviesListEvent)="movies"></app-movie-list>
+  <app-movie-list [movies]="movies"></app-movie-list>
 </div>

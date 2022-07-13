@@ -30,9 +30,7 @@ export class MovieInputComponent implements OnInit {
   });
 
   submit() {
-    console.log(JSON.stringify(this.form.value));
     this.newMovieAddEvent.emit(this.form.value)
-    //this.movies.push(this.form.value);
     this.form.reset();
   }
 
